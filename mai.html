@@ -122,6 +122,29 @@
             border-radius: 10px;
         }
 
+        /* Стиль для секции контактов и фото */
+        #contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #contact {
+            width: 60%;
+        }
+
+        #portrait {
+            width: 35%;
+            text-align: center;
+        }
+
+        #portrait img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -156,21 +179,28 @@
         <p>Webdesigner & Entwickler | Rettungsschwimmer</p>
     </header>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <ul>
-            <li>Adresse: Wittering Str. 73, 45130 Essen</li>
-            <li>Mobil: <a href="tel:+4915753775609">+49 15753775609</a></li>
-            <li>E-Mail: <a href="mailto:dezegm@gmail.com">dezegm@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/dmytro-skliarov0303/" target="_blank">linkedin.com/in/dmytro-skliarov0303</a></li>
-        </ul>
+    <section id="contact-container">
+        <div id="contact">
+            <h2>Kontakt</h2>
+            <ul>
+                <li>Adresse: Wittering Str. 73, 45130 Essen</li>
+                <li>Mobil: <a href="tel:+4915753775609">+49 15753775609</a></li>
+                <li>E-Mail: <a href="mailto:dezegm@gmai.com">dezegm@gmai.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/dmytro-skliarov0303/" target="_blank">linkedin.com/in/dmytro-skliarov0303</a></li>
+            </ul>
+        </div>
+
+        <!-- Добавление блока для портрета -->
+        <div id="portrait">
+            <img src="dein-portrait.jpg" alt="Dmytro Skliarov">
+        </div>
     </section>
 
     <section id="experience">
         <h2>Berufserfahrung</h2>
         <div class="job">
             <h3>Fullstack Webentwickler</h3>
-            <p>RoutedIn, Remote | Aug 2024 – jetzt</p>
+            <p>RoutedIn, Remote | Feb 2024 – jetzt</p>
             <p>• Entwicklung und Wartung von Webanwendungen sowohl im Frontend als auch im Backend.</p>
             <p>• Verwendung von modernen Technologien wie React, Node.js, und Datenbanken (z.B. MongoDB, SQL).</p>
         </div>
