@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitenkarte - Dmytro Skliarov</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+            padding: 2rem 0;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeIn 1s forwards ease-out 0.5s;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 1rem auto;
+            border-bottom: 1px solid #ccc;
+            background-color: white;
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards ease-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 2s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 2.5s;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #282c34;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li, p {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .job h3 {
+            font-size: 1.4rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-container {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-bar {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 10px;
+        }
+
+        .skill-progress {
+            background-color: #007bff;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #282c34;
+            color: white;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 1s forwards ease-out 3s;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dmytro Skliarov</h1>
+        <p>Webdesigner & Entwickler | Rettungsschwimmer</p>
+    </header>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <ul>
+            <li>Adresse: Wittering Str. 73, 45130 Essen</li>
+            <li>Mobil: <a href="tel:+4915753775609">+49 15753775609</a></li>
+            <li>E-Mail: <a href="mailto:dezegm@gmail.com">dezegm@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/dmytro-skliarov0303/" target="_blank">linkedin.com/in/dmytro-skliarov0303</a></li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Berufserfahrung</h2>
+        <div class="job">
+            <h3>Fullstack Webentwickler</h3>
+            <p>RoutedIn, Remote | Aug 2024 – jetzt</p>
+            <p>• Entwicklung und Wartung von Webanwendungen sowohl im Frontend als auch im Backend.</p>
+            <p>• Verwendung von modernen Technologien wie React, Node.js, und Datenbanken (z.B. MongoDB, SQL).</p>
+        </div>
+        <div class="job">
+            <h3>Rettungsschwimmer</h3>
+            <p>Deutsch Rotes Kreuz, Essen | Jun 2023 – jetzt</p>
+            <p>Abteilung: Wasserwacht</p>
+        </div>
+        <div class="job">
+            <h3>Webdesigner, Webentwickler</h3>
+            <p>AKKRAS, Kiew | Feb 2020 – Feb 2022</p>
+            <p>• Verbesserung der Funktionalität und Darstellung der Website.</p>
+            <p>• Erstellung von Firmenlogos und Entwicklung einer benutzerfreundlichen Webseite und Internetshop.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Ausbildung</h2>
+        <p>2019 – 2023: Nationale Luftfahrtuniversität der Ukraine (Ukraine)<br>Bachelor-Abschluss, Softwareentwickler</p>
+    </section>
+
+    <section id="skills">
+        <h2>Fähigkeiten</h2>
+        <div class="skill-container">
+            <div class="skill-name">HTML (gute Kenntnisse)</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">Java, C++, C#, CSS (Grundkenntnisse)</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 60%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">MS Office, Adobe PS, UX/UI Design</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">Web-Entwicklung, Grafischer Entwurf</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">Deutsch (B1)</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 50%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">Englisch (Fließend)</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests">
+        <h2>Interessen</h2>
+        <ul>
+            <li>Fotografie: Landschaft, Porträt, kommerzielle Fotografie</li>
+            <li>Zeichnen: Digitale Kunst, Handkunst, 3D-Modellierung</li>
+            <li>Reisen: Europa und weltweit, neue Kulturen und Sprachen entdecken</li>
+            <li>Sport: Tennis, Schwimmen, Skifahren</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Essen, 07.05.2024</p>
+    </footer>
+
+    <script>
+        // Простое всплывающее сообщение при загрузке страницы
+        window.onload = function() {
+            alert("Willkommen auf der Visitenkarte von Dmytro Skliarov!");
+        };
+    </script>
+
+</body>
+</html>
