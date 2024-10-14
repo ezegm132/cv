@@ -13,23 +13,27 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #1f1c2c, #928dab); /* Градиентный фон в IT-стиле */
+            background-attachment: fixed; /* Фон остаётся на месте при прокрутке */
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
+        header, section, footer {
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый блок */
+            border-radius: 15px;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         header {
             text-align: center;
-            background-color: #282c34;
-            color: white;
-            padding: 2rem 0;
             opacity: 0;
             transform: translateY(-50px);
             animation: fadeIn 1s forwards ease-out 0.5s;
-            border-radius: 15px;
-            margin: 2rem auto;
-            max-width: 900px;
         }
 
         header h1 {
@@ -41,38 +45,44 @@
             margin-top: 0.5rem;
         }
 
+        /* Навигационный блок */
+        #nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        #nav a:hover {
+            color: #007bff;
+        }
+
         section {
             padding: 2rem;
-            max-width: 900px;
             margin: 1rem auto;
             border-bottom: 1px solid #ccc;
-            background-color: white;
-            border-radius: 15px;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeIn 1s forwards ease-out;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        section:nth-child(2) {
-            animation-delay: 1s;
-        }
-
-        section:nth-child(3) {
-            animation-delay: 1.5s;
-        }
-
-        section:nth-child(4) {
-            animation-delay: 2s;
-        }
-
-        section:nth-child(5) {
-            animation-delay: 2.5s;
-        }
-
-        section:nth-child(6) {
-            animation-delay: 3s;
-        }
+        section:nth-child(2) { animation-delay: 1s; }
+        section:nth-child(3) { animation-delay: 1.5s; }
+        section:nth-child(4) { animation-delay: 2s; }
+        section:nth-child(5) { animation-delay: 2.5s; }
+        section:nth-child(6) { animation-delay: 3s; }
 
         h2 {
             font-size: 1.8rem;
@@ -126,7 +136,6 @@
             border-radius: 10px;
         }
 
-        /* Стиль для секции контактов и фото */
         #contact-container {
             display: flex;
             justify-content: space-between;
@@ -152,15 +161,10 @@
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #282c34;
-            color: white;
             margin-top: 2rem;
             opacity: 0;
             transform: translateY(50px);
             animation: fadeIn 1s forwards ease-out 3s;
-            border-radius: 15px;
-            max-width: 900px;
-            margin: 2rem auto;
         }
 
         /* Анимация появления */
@@ -174,30 +178,43 @@
                 transform: translateY(0);
             }
         }
+
+        /* Плавная прокрутка при клике на ссылки */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Навигационный блок -->
+    <div id="nav">
+        <a href="#contact">Kontakt</a>
+        <a href="#experience">Berufserfahrung</a>
+        <a href="#education">Ausbildung</a>
+        <a href="#skills">Fähigkeiten</a>
+        <a href="#about">Über mich</a>
+        <a href="#interests">Interessen</a>
+    </div>
 
     <header>
         <h1>Dmytro Skliarov</h1>
         <p>Webdesigner & Entwickler | Rettungsschwimmer</p>
     </header>
 
-
     <section id="contact-container">
         <div id="contact">
-            <h2>Kontakt</h2>
+            <h2 id="contact">Kontakt</h2>
             <ul>
                 <li>Adresse: Wittering Str. 73, 45130 Essen</li>
                 <li>Mobil: <a href="tel:+4915753775609">+49 15753775609</a></li>
-                <li>E-Mail: <a href="mailto:dezegm@gmai.com">dezegm@gmai.com</a></li>
+                <li>E-Mail: <a href="mailto:dezegm@gmail.com">dezegm@gmail.com</a></li>
                 <li>LinkedIn: <a href="https://www.linkedin.com/in/dmytro-skliarov0303/" target="_blank">linkedin.com/in/dmytro-skliarov0303</a></li>
             </ul>
         </div>
 
-        <!-- Добавление блока для портрета -->
         <div id="portrait">
-            <img src="ewffds.jpg" alt="Dmytro Skliarov">
+            <img src="dein-portrait.jpg" alt="Dmytro Skliarov">
         </div>
     </section>
 
@@ -236,33 +253,21 @@
             </div>
         </div>
         <div class="skill-container">
-            <div class="skill-name">Java, C++, C#, CSS (Grundkenntnisse)</div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%;"></div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-name">MS Office, Adobe PS, UX/UI Design</div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%;"></div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-name">Web-Entwicklung, Grafischer Entwurf</div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%;"></div>
-            </div>
-        </div>
-        <div class="skill-container">
-            <div class="skill-name">Deutsch (B1)</div>
+            <div class="skill-name">CSS (Grundkenntnisse)</div>
             <div class="skill-bar">
                 <div class="skill-progress" style="width: 60%;"></div>
             </div>
         </div>
         <div class="skill-container">
-            <div class="skill-name">Englisch (Fließend)</div>
+            <div class="skill-name">JavaScript (gute Kenntnisse)</div>
             <div class="skill-bar">
-                <div class="skill-progress" style="width: 95%;"></div>
+                <div class="skill-progress" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            <div class="skill-name">PHP (Grundkenntnisse)</div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: 60%;"></div>
             </div>
         </div>
     </section>
@@ -277,7 +282,7 @@
         </ul>
     </section>
 
-    <!-- Новый блок с дополнительной информацией -->
+    <!-- Новый блок "Über mich" -->
     <section id="about">
         <h2>Über mich</h2>
         <p>Ich habe mit den Entwicklerteams zusammengearbeitet, um sicherzustellen, dass der Shop die Kundenbedürfnisse und die Geschäftsziele erfüllt. Außerdem habe ich zur Wartung und Verbesserung der Website des Unternehmens und anderer digitaler Plattformen beigetragen. Ich verfüge über mehr als 2 Jahre Erfahrung in der Webentwicklung und habe jetzt meine Ausbildung abgeschlossen und einen Bachelor-Abschluss in Computer Software Engineering an der National Aviation University erhalten. Ich bin begeistert davon, innovative und benutzerfreundliche Weblösungen zu entwickeln, die die Online-Präsenz und -Leistung von Unternehmen verbessern. Ich bin immer bestrebt, neue Technologien und Tools zu lernen und mit anderen Fachleuten auf diesem Gebiet zusammenzuarbeiten. Zu meinen Kernkompetenzen gehören HTML, CSS, JavaScript, PHP, WordPress und Bootstrap.</p>
@@ -286,13 +291,6 @@
     <footer>
         <p>Essen, 07.05.2024</p>
     </footer>
-
-    <script>
-        // Простое всплывающее сообщение при загрузке страницы
-        window.onload = function() {
-            alert("Willkommen auf der Visitenkarte von Dmytro Skliarov!");
-        };
-    </script>
 
 </body>
 </html>
