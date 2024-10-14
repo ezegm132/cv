@@ -55,6 +55,12 @@
             text-align: center;
             z-index: 1000;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Плавный переход */
+        }
+
+        #nav.hidden {
+            transform: translateY(-100%); /* Скрываем вверх */
+            opacity: 0;
         }
 
         #nav a {
@@ -303,6 +309,24 @@
     <footer>
         <p>Essen, 07.05.2024</p>
     </footer>
+
+    <!-- Добавленный скрипт для скрытия и отображения навигации -->
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.getElementById('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Прокрутка вниз - скрываем навигацию
+                nav.classList.add('hidden');
+            } else {
+                // Прокрутка вверх - показываем навигацию
+                nav.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 
 </body>
 </html>
